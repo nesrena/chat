@@ -1,0 +1,89 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: فضفض_2.0.68.apk
+compressionType: false
+doNotCompress:
+- arsc
+- META-INF/android.arch.core_runtime.version
+- META-INF/android.arch.lifecycle_livedata-core.version
+- META-INF/android.arch.lifecycle_runtime.version
+- META-INF/android.arch.lifecycle_viewmodel.version
+- META-INF/com.android.support_animated-vector-drawable.version
+- META-INF/com.android.support_appcompat-v7.version
+- META-INF/com.android.support_cardview-v7.version
+- META-INF/com.android.support_design.version
+- META-INF/com.android.support_recyclerview-v7.version
+- META-INF/com.android.support_support-compat.version
+- META-INF/com.android.support_support-core-ui.version
+- META-INF/com.android.support_support-core-utils.version
+- META-INF/com.android.support_support-fragment.version
+- META-INF/com.android.support_support-media-compat.version
+- META-INF/com.android.support_support-v4.version
+- META-INF/com.android.support_support-vector-drawable.version
+- META-INF/com.android.support_transition.version
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '17'
+  targetSdkVersion: '27'
+sharedLibrary: false
+unknownFiles:
+  androidsupportmultidexversion.txt: '0'
+  firebase-abt.properties: '8'
+  firebase-ads.properties: '8'
+  firebase-analytics-impl.properties: '8'
+  firebase-analytics.properties: '8'
+  firebase-auth-interop.properties: '8'
+  firebase-auth.properties: '8'
+  firebase-common.properties: '8'
+  firebase-config.properties: '8'
+  firebase-core.properties: '8'
+  firebase-database-collection.properties: '8'
+  firebase-database-connection.properties: '8'
+  firebase-database.properties: '8'
+  firebase-iid-interop.properties: '8'
+  firebase-iid.properties: '8'
+  firebase-measurement-connector-impl.properties: '8'
+  firebase-measurement-connector.properties: '8'
+  firebase-messaging.properties: '8'
+  play-services-ads-base.properties: '8'
+  play-services-ads-identifier.properties: '8'
+  play-services-ads-lite.properties: '8'
+  play-services-ads.properties: '8'
+  play-services-analytics-impl.properties: '8'
+  play-services-analytics.properties: '8'
+  play-services-base.properties: '8'
+  play-services-basement.properties: '8'
+  play-services-flags.properties: '8'
+  play-services-gass.properties: '8'
+  play-services-measurement-base.properties: '8'
+  play-services-phenotype.properties: '8'
+  play-services-stats.properties: '8'
+  play-services-tasks.properties: '8'
+  publicsuffixes.gz: '0'
+  com/applovin/mediation/impl/AppLovinAdColonyMediationAdapter.java: '8'
+  com/applovin/mediation/impl/AppLovinChartboostMediationAdapter.java: '8'
+  com/applovin/mediation/impl/AppLovinFacebookMediationAdapter.java: '8'
+  com/applovin/mediation/impl/AppLovinGoogleMediationAdapter.java: '8'
+  com/applovin/mediation/impl/AppLovinHeyzapMediationAdapter.java: '8'
+  com/applovin/mediation/impl/AppLovinInMobiMediationAdapter.java: '8'
+  com/applovin/mediation/impl/AppLovinIronSourceMediationAdapter.java: '8'
+  com/applovin/mediation/impl/AppLovinMoPubMediationAdapter.java: '8'
+  com/applovin/mediation/impl/AppLovinUnityMediationAdapter.java: '8'
+  com/applovin/mediation/impl/AppLovinVungleMediationAdapter.java: '8'
+  com/applovin/mediation/impl/GlobalListenerAdapterBase.java: '8'
+  com/applovin/mediation/impl/MediationAdapterBase.java: '8'
+  fabric/com.crashlytics.sdk.android.answers.properties: '8'
+  fabric/com.crashlytics.sdk.android.beta.properties: '8'
+  fabric/com.crashlytics.sdk.android.crashlytics-core.properties: '8'
+  fabric/com.crashlytics.sdk.android.crashlytics.properties: '8'
+  fabric/io.fabric.sdk.android.fabric.properties: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.3.0
+versionInfo:
+  versionCode: '188'
+  versionName: 2.0.68

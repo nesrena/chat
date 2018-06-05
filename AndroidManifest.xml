@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="188" android:versionName="2.0.68" package="sa.fadfed.fadfedapp">
+    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="27" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="sa.fadfed.fadfedapp.permission.C2D_MESSAGE" android:protectionLevel="signature|signatureOrSystem" />
+    <uses-permission android:name="sa.fadfed.fadfedapp.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" />
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" />
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_APP_BADGE" />
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:name="sa.fadfed.fadfedapp.FadFedApplication" android:allowBackup="true" android:supportsRtl="false">
+        <activity android:name="ui.contact.ContactActivity" android:launchMode="singleTop" android:screenOrientation="portrait" />
+        <activity android:name="ui.splash.FadfedSplashActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden|stateAlwaysHidden" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="ui.home.FadfedHomeActivity" android:screenOrientation="portrait" android:noHistory="false" />
+        <activity android:name="ui.agreement.FadfedAgreementActivity" android:screenOrientation="portrait" android:noHistory="true" />
+        <activity android:name="ui.chat.FadfedChatActivity" android:launchMode="singleTop" android:screenOrientation="portrait" />
+        <receiver android:name="sa.fadfed.fadfedapp.util.TimeChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+        </receiver>
+        <service android:name="sa.fadfed.fadfedapp.MyFirebaseMessagingService" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="sa.fadfed.fadfedapp.firebase.MyFirebaseInstanceIDService" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_notification" />
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/colorAccent" />
+        <meta-data android:name="io.fabric.ApiKey" android:value="731ae7fa8f552f9b52c4d58a1e3608f56f6ac64d" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.appodeal.ads.InterstitialActivity" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.appodeal.ads.VideoActivity" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.appodeal.ads.LoaderActivity" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.appodeal.ads.VideoPlayerActivity" />
+        <receiver android:name="com.appodeal.ads.AppodealPackageAddedReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.appodeal.ads.TestActivity" />
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+        <activity android:theme="@style/TranslucentTheme" android:name="com.google.android.gms.ads.AdActivity" android:exported="false" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.chartboost.sdk.CBImpressionActivity" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" />
+        <activity android:name="com.applovin.adview.AppLovinInterstitialActivity" android:configChanges="orientation|screenSize" />
+        <activity android:name="com.applovin.adview.AppLovinConfirmationActivity" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent" android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name="com.mopub.mobileads.RewardedMraidActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="org.nexage.sourcekit.vast.activity.VASTActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="org.nexage.sourcekit.vast.activity.VPAIDActivity" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="com.appodeal.ads.networks.vpaid.VPAIDActivity" />
+        <activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name="com.my.target.ads.MyTargetActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:hardwareAccelerated="true" />
+        <activity android:name="com.facebook.ads.AudienceNetworkActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme" android:name="com.startapp.android.publish.ads.list3d.List3DActivity" />
+        <activity android:theme="@*android:style/Theme.Translucent" android:name="com.startapp.android.publish.adsCommon.activities.OverlayActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme" android:name="com.startapp.android.publish.adsCommon.activities.FullScreenActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <service android:name="com.startapp.android.publish.common.metaData.PeriodicMetaDataService" />
+        <service android:name="com.startapp.android.publish.common.metaData.InfoEventService" />
+        <service android:name="com.yandex.metrica.MetricaService" android:enabled="true" android:exported="true" android:process=":Metrica">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.yandex.metrica.IMetricaService" />
+                <data android:scheme="metrica" />
+            </intent-filter>
+            <meta-data android:name="metrica:api:level" android:value="58" />
+        </service>
+        <receiver android:name="com.yandex.metrica.MetricaEventHandler" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.yandex.mobile.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.ads.adunit.AdUnitActivity" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="true" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="false" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.ads2.adunit.AdUnitActivity" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="true" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.ads2.adunit.AdUnitSoftwareActivity" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="false" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.jirbo.adcolony.AdColonyOverlay" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.jirbo.adcolony.AdColonyFullscreen" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.jirbo.adcolony.AdColonyBrowser" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="com.vungle.publisher.VideoFullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.vungle.publisher.MraidFullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.vungle.publisher.FlexViewAdActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.flurry.android.FlurryShareActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.flurry.android.FlurryTileAdActivity" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.flurry.android.FlurryBrowserActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.tapjoy.TJAdUnitActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" />
+        <activity android:name="com.tapjoy.mraid.view.ActionHandler" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name="com.tapjoy.mraid.view.Browser" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.tapjoy.TJContentActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" />
+        <activity android:name="com.ironsource.sdk.controller.ControllerActivity" android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" />
+        <activity android:theme="@*android:style/Theme.Translucent" android:name="com.ironsource.sdk.controller.InterstitialActivity" android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" />
+        <activity android:theme="@*android:style/Theme.Translucent" android:name="com.ironsource.sdk.controller.OpenUrlActivity" android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" />
+        <activity android:name="com.adcolony.sdk.AdColonyInterstitialActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" />
+        <activity android:name="com.adcolony.sdk.AdColonyAdViewActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar" android:name="com.inmobi.rendering.InMobiAdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:hardwareAccelerated="true" android:resizeableActivity="false" />
+        <receiver android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.inmobi.share.id" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.google.firebase.auth.internal.FederatedSignInActivity" android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN" android:exported="true" android:excludeFromRecents="true" android:launchMode="singleInstance" />
+        <service android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+        <receiver android:name="com.google.android.gms.analytics.AnalyticsReceiver" android:enabled="true" android:exported="false" />
+        <service android:name="com.google.android.gms.analytics.AnalyticsService" android:enabled="true" android:exported="false" />
+        <service android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false" />
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false" />
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false" />
+        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false" />
+        <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="sa.fadfed.fadfedapp" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.firebase.iid.FirebaseInstanceIdService" android:exported="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="sa.fadfed.fadfedapp.firebaseinitprovider" android:initOrder="100" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false" />
+        <activity android:theme="@*android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.cmcm.picks.PicksLoadingActivity" android:taskAffinity="com.cmcm.adsdk.nativead" android:launchMode="singleTask" />
+        <activity android:theme="@style/cm_interstital" android:name="com.cmcm.adsdk.interstitial.PicksInterstitialActivity" android:launchMode="singleTask" />
+        <activity android:theme="@*android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.cmcm.picks.webview.PicksBrowser" android:launchMode="singleTask" />
+        <service android:name="com.cmcm.picks.init.DownloadService" android:exported="false" android:process=":PickService" />
+        <activity android:name="com.cmcm.picks.vastvideo.FullScreenVideoActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="landscape" />
+        <activity android:theme="@style/Theme.MMTransparent" android:label="@string/mmadsdk_app_name" android:name="com.millennialmedia.internal.MMActivity" android:configChanges="locale|layoutDirection" />
+        <activity android:label="sdk" android:name="com.millennialmedia.internal.MMIntentWrapperActivity" android:configChanges="locale|layoutDirection" />
+        <receiver android:name="com.instacart.library.truetime.BootCompletedBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="android.support.VERSION" android:value="26.1.0" />
+    </application>
+</manifest>
